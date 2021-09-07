@@ -5,11 +5,9 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Plan:IEntity
+    public class ToCity:IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int TourOrderId { get; set; }
-        public string Description { get; set; }
     }
 }

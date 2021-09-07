@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface ICityDal : IEntityRepository<City>
+    public interface IFromCityDal : IEntityRepository<FromCity>
     {
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCityDal: EfEntityRepositoryBase<City, NorthwindContext>, ICityDal
+    public class EfToCityDal : EfEntityRepositoryBase<ToCity, NorthwindContext>, IToCityDal
     {
     }
 }

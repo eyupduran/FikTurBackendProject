@@ -11,14 +11,16 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CitiesController : ControllerBase
+    public class ToCitiesController : ControllerBase
     {
-        private ICityService _cityService;
+        private IToCityService _cityService;
 
-        public CitiesController(ICityService cityService)
+        public ToCitiesController(IToCityService cityService)
         {
             _cityService = cityService;
         }
+
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
@@ -32,7 +34,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(City city )
+        public IActionResult Add(ToCity city)
         {
             var result = _cityService.Add(city);
             if (result.Success)
@@ -43,7 +45,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(City city)
+        public IActionResult Delete(ToCity city)
         {
             var result = _cityService.Delete(city);
             if (result.Success)
@@ -54,7 +56,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(City city)
+        public IActionResult Update(ToCity city)
         {
             var result = _cityService.Update(city);
             if (result.Success)

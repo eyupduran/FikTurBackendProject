@@ -10,33 +10,33 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    public class CityManager : ICityService
+    public class FromCityManager : IFromCityService
     {
-        private ICityDal _cityDal;
+        private IFromCityDal _cityDal;
 
-        public CityManager(ICityDal cityDal)
+        public FromCityManager(IFromCityDal cityDal)
         {
             _cityDal = cityDal;
         }
 
-        public IResult Add(City city)
+        public IResult Add(FromCity city)
         {
             this._cityDal.Add(city);
             return new SuccessResult(Messages.Success);
         }
 
-        public IResult Delete(City city)
+        public IResult Delete(FromCity city)
         {
             this._cityDal.Delete(city);
             return new SuccessResult(Messages.Success);
         }
 
-        public IDataResult<List<City>> GetAll()
+        public IDataResult<List<FromCity>> GetAll()
         {
-            return new SuccessDataResult<List<City>>(_cityDal.GetList().ToList());
+            return new SuccessDataResult<List<FromCity>>(_cityDal.GetList().ToList());
         }
 
-        public IResult Update(City city)
+        public IResult Update(FromCity city)
         {
             this._cityDal.Update(city);
             return new SuccessResult(Messages.Success);

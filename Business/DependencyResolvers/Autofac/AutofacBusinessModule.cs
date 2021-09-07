@@ -18,8 +18,7 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<ProductManager>().As<IProductService>();
-            builder.RegisterType<EfProductDal>().As<IProductDal>();
+
 
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
@@ -27,14 +26,17 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<TourOrderManager>().As<ITourOrderService>();
             builder.RegisterType<EfTourOrderDal>().As<ITourOrderDal>();
 
-            builder.RegisterType<CityManager>().As<ICityService>();
-            builder.RegisterType<EfCityDal>().As<ICityDal>();
+            builder.RegisterType<FromCityManager>().As<IFromCityService>();
+            builder.RegisterType<EfFromCityDal>().As<IFromCityDal>();
 
             builder.RegisterType<PackageManager>().As<IPackageService>();
             builder.RegisterType<EfPackageDal>().As<IPackageDal>();
 
             builder.RegisterType<PlanManager>().As<IPlanService>();
             builder.RegisterType<EfPlanDal>().As<IPlanDal>();
+
+            builder.RegisterType<ToCityManager>().As<IToCityService>();
+            builder.RegisterType<EfToCityDal>().As<IToCityDal>();
 
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();

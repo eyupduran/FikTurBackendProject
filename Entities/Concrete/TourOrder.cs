@@ -13,8 +13,8 @@ namespace Entities.Concrete
         public DateTime StartDate { get; set; }
         public DateTime FinishDate { get; set; }
         public string Description { get; set; }
-
         public string Name { get; set; }
+        public int PackageId { get; set; }
 
     }
 }
