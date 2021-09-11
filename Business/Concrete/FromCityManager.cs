@@ -36,6 +36,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<FromCity>>(_cityDal.GetList().ToList());
         }
 
+        public IDataResult<FromCity> GetById(int cityId)
+        {
+            return new SuccessDataResult<FromCity>(_cityDal.Get(fc=>fc.Id==cityId));
+        }
+
         public IResult Update(FromCity city)
         {
             this._cityDal.Update(city);

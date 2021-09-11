@@ -63,5 +63,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getbyid")] //içine yazdığımız sadece bir isimlendirme
+        public IActionResult GetById(int id)
+        {
+            var result = _cityService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

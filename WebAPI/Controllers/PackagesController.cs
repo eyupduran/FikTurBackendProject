@@ -64,5 +64,28 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getById")]
+        public IActionResult GetById(int id)
+        {
+            var result = _packageService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getByPrice")]
+        public IActionResult GetByPrice(decimal min,decimal max)
+        {
+            var result = _packageService.getByPrice(min,max);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+
     }
 }

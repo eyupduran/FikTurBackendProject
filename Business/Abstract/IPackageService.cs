@@ -12,5 +12,8 @@ namespace Business.Abstract
         IResult Add(Package package);
         IResult Delete(Package package);
         IResult Update(Package package);
+        IDataResult<Package> GetById(int packageId);
+
+        IDataResult<List<Package>> getByPrice(decimal min, decimal max);
     }
 }

@@ -11,13 +11,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfFromCityDal : EfEntityRepositoryBase<FromCity, FikTurContext>, IFromCityDal
     {
-        public DataResult<FromCity> GetByCityName(string name)
-        {
-            //using (var context = new FikTurContext()) {
-            //    var result=from fc in context.FromCities
-            //               where name
-            //}
-            return null;
-        }
+       
     }
 }

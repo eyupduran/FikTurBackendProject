@@ -64,6 +64,31 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getById")]
+        public IActionResult GetById(int id)
+        {
+            //Dependency chain -- bağımlılık zinciri
+            var result = _tourService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+
+        [HttpGet("getAllTourOrderDetailsById")]
+        public IActionResult GetAllTourOrderDetailsById(int id)
+        {
+            
+            var result = _tourService.GetAllTourOrderDetailsById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
 
     }
 }

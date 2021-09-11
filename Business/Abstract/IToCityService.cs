@@ -12,5 +12,7 @@ namespace Business.Abstract
         IResult Add(ToCity city);
         IResult Delete(ToCity city);
         IResult Update(ToCity city);
+
+        IDataResult<ToCity> GetById(int id);
     }
 }

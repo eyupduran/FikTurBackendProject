@@ -9,6 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface IFromCityDal : IEntityRepository<FromCity>
     {
-        DataResult<FromCity> GetByCityName(string name);
+  
     }
 }

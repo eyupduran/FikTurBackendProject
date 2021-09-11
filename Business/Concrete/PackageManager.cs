@@ -36,6 +36,16 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Package>>(_packageDal.GetList().ToList());
         }
 
+        public IDataResult<Package> GetById(int packageId)
+        {
+            return new SuccessDataResult<Package>(_packageDal.Get(p=>p.Id==packageId));
+        }
+
+        public IDataResult<List<Package>> getByPrice(decimal min, decimal max)
+        {
+            return new SuccessDataResult<List<Package>>(_packageDal.GetList(p => p.Price >= min && p.Price <= max).ToList());
+        }
+
         public IResult Update(Package package)
         {
             this._packageDal.Update(package);

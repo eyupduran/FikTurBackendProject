@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,16 @@ namespace Business.Concrete
         public IDataResult<List<TourOrder>> GetAll()
         {
             return new SuccessDataResult<List<TourOrder>>(_tourOrderDal.GetList().ToList());
+        }
+
+        public DataResult<List<AllTourOrderDetailsDto>> GetAllTourOrderDetailsById(int tourOrderId)
+        {
+            return new SuccessDataResult<List<AllTourOrderDetailsDto>>(_tourOrderDal.GetAllTourOrderDetailsById(tourOrderId));
+        }
+
+        public IDataResult<TourOrder> GetById(int id)
+        {
+            return new SuccessDataResult<TourOrder>(_tourOrderDal.Get(to=>to.Id==id));
         }
 
         public IResult Update(TourOrder tourOrder)

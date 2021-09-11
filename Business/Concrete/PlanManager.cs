@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,21 @@ namespace Business.Concrete
         public IDataResult<List<Plan>> GetAll()
         {
             return new SuccessDataResult<List<Plan>>(_plandal.GetList().ToList());
+        }
+
+        public IDataResult<List<Plan>> GetAllByTourOrderId(int id)
+        {
+            return new SuccessDataResult<List<Plan>>(_plandal.GetList(p=>p.TourOrderId== id).ToList()) ;
+        }
+
+        public DataResult<List<PlanAndTourOrderDetailDto>> GetAllPlanAndTourOrderDetailsByTourId(int tourId)
+        {
+            return new SuccessDataResult<List<PlanAndTourOrderDetailDto>>(_plandal.GetAllPlanAndTourOrderDetailsByTourId(tourId));
+        }
+
+        public IDataResult<Plan> GetById(int id)
+        {
+            return new SuccessDataResult<Plan>(_plandal.Get(p=>p.Id==id)) ;
         }
 
         public IResult Update(Plan plan)

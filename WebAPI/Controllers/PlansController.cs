@@ -65,5 +65,41 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+
+        [HttpGet("getByTourOrderId")]
+        public IActionResult GetAllByTourOrder(int id)
+        {
+            //Dependency chain -- bağımlılık zinciri
+            var result = _planService.GetAllByTourOrderId(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet(" getById")]
+        public IActionResult GetById(int id)
+        {
+            //Dependency chain -- bağımlılık zinciri
+            var result = _planService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet(" getAllPlanAndTourOrderDetailsByTourId")]
+        public IActionResult GetAllPlanAndTourOrderDetailsByTourId(int tourId)
+        {
+            //Dependency chain -- bağımlılık zinciri
+            var result = _planService.GetAllPlanAndTourOrderDetailsByTourId(tourId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

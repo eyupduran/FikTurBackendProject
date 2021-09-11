@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,9 @@ namespace Business.Abstract
         IResult Add(TourOrder tourOrder);
         IResult Delete(TourOrder tourOrder);
         IResult Update(TourOrder tourOrder);
+        IDataResult<TourOrder> GetById(int id);
+
+        DataResult<List<AllTourOrderDetailsDto>>GetAllTourOrderDetailsById(int tourOrderId);
 
     }
 }
