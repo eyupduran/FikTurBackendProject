@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfPlanDal : EfEntityRepositoryBase<Plan, NorthwindContext>, IPlanDal
+    public class EfPlanDal : EfEntityRepositoryBase<Plan, FikTurContext>, IPlanDal
     {
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfTourOrderDal:EfEntityRepositoryBase<TourOrder, NorthwindContext>, ITourOrderDal
+    public class EfTourOrderDal:EfEntityRepositoryBase<TourOrder, FikTurContext>, ITourOrderDal
     {
     }
 }

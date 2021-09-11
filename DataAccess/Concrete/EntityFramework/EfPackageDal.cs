@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete
 {
-    public class EfPackageDal:EfEntityRepositoryBase<Package, NorthwindContext>, IPackageDal
+    public class EfPackageDal:EfEntityRepositoryBase<Package, FikTurContext>, IPackageDal
     {
     }
 }

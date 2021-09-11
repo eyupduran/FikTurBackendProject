@@ -7,7 +7,7 @@ using Core.Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework.Contexts
 {
-    public class NorthwindContext:DbContext
+    public class FikTurContext:DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
