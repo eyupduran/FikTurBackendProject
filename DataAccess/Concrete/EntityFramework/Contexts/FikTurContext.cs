@@ -22,6 +22,7 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<ToCity> ToCities { get; set; }
         public DbSet<Package> Packages { get; set; }
         public DbSet<Plan> Plans { get; set; }
+        public DbSet<PackageProperty> PackageProperties { get; set; }
 
 
     }

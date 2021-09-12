@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities.Dtos
 {
-   public class AllTourOrderDetailsDto:IDto
+   public class TourOrderDetailsDto:IDto
     {
         public int Id { get; set; }
         public int FromCityId { get; set; }

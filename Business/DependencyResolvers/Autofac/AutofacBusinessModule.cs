@@ -38,6 +38,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ToCityManager>().As<IToCityService>();
             builder.RegisterType<EfToCityDal>().As<IToCityDal>();
 
+            builder.RegisterType<PackagePropertyManager>().As<IPackagePropertyService>();
+            builder.RegisterType<EfPackagePropertyDal>().As<IPackagePropertyDal>();
+
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 

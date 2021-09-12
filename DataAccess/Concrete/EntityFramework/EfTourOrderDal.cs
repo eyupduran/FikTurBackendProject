@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfTourOrderDal : EfEntityRepositoryBase<TourOrder, FikTurContext>, ITourOrderDal
     {
-        public List<AllTourOrderDetailsDto> GetAllTourOrderDetailsById(int id)
+        public List<TourOrderDetailsDto> GetAllTourOrderDetailsById(int id)
         {
             using (FikTurContext context=new FikTurContext())
             {
@@ -20,7 +20,7 @@ namespace DataAccess.Concrete.EntityFramework
                              join fc in context.FromCities on to.FromCityId equals fc.Id
                              join tc in context.ToCities on to.ToCityId equals tc.Id
                              where id == to.Id
-                             select new AllTourOrderDetailsDto
+                             select new TourOrderDetailsDto
                              {
                                  Id = to.Id,
                                  FromCityId = to.FromCityId,

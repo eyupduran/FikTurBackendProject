@@ -1,5 +1,4 @@
 ﻿using Core.DataAccess;
-using Core.Utilities.Results;
 using Entities.Concrete;
 using Entities.Dtos;
 using System;
@@ -8,8 +7,8 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IPlanDal : IEntityRepository<Plan>
+    public interface IPackagePropertyDal : IEntityRepository<PackageProperty>
     {
-       List<PlanAndTourOrderDetailsDto> GetAllPlanAndTourOrderDetailsByTourId(int tourId);
+        PackagePropertyDetailsDto GetOnePackagePropertyDetailsById(int id);
     }
 }
