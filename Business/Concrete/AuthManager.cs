@@ -11,7 +11,7 @@ using Entities.Dtos;
 
 namespace Business.Concrete
 {
-    public class AuthManager:IAuthService
+    public class AuthManager : IAuthService
     {
         private IUserService _userService;
         private ITokenHelper _tokenHelper;
@@ -20,6 +20,11 @@ namespace Business.Concrete
         {
             _userService = userService;
             _tokenHelper = tokenHelper;
+        }
+        
+        public List<OperationClaim> GetUserOperationClaims(User user)
+        {
+            return _userService.GetClaims(user);
         }
 
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)

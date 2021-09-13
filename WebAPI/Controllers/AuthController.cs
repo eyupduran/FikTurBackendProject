@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using Entities.Dtos;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,9 @@ namespace WebAPI.Controllers
             {
                 return BadRequest(tokenResult);
             }
+
+            var operationClaims=_authService.GetUserOperationClaims(new User{ Id= userToLogin.Data.Id});
+
             AuthDto authDto = new AuthDto
             {
                 UserId = userToLogin.Data.Id,
@@ -41,6 +45,7 @@ namespace WebAPI.Controllers
                 LastName = userToLogin.Data.LastName,
                 Token = tokenResult.Data.Token,
                 Expiration = tokenResult.Data.Expiration,
+                OperationClaims= operationClaims
             };
             var result = new SuccessDataResult<AuthDto>(authDto, userToLogin.Message);
             return Ok(result);
