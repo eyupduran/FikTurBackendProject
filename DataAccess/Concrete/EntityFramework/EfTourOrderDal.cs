@@ -12,6 +12,31 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfTourOrderDal : EfEntityRepositoryBase<TourOrder, FikTurContext>, ITourOrderDal
     {
+        public List<TourOrderDetailsDto> GetAllTourOrderDetails()
+        {
+            using (FikTurContext context = new FikTurContext())
+            {
+                var result = from to in context.TourOrders
+                             join fc in context.FromCities on to.FromCityId equals fc.Id
+                             join tc in context.ToCities on to.ToCityId equals tc.Id
+                             select new TourOrderDetailsDto
+                             {
+                                 Id = to.Id,
+                                 FromCityId = to.FromCityId,
+                                 ToCityId = to.ToCityId,
+                                 StartDate = to.StartDate,
+                                 FinishDate = to.FinishDate,
+                                 Description = to.Description,
+                                 Name = to.Name,
+                                 FromCityName = fc.Name,
+                                 ToCityName = tc.Name
+
+                             };
+                return result.ToList();
+
+            }
+        }
+
         public TourOrderDetailsDto GetOneTourOrderDetailsById(int id)
         {
             using (FikTurContext context=new FikTurContext())

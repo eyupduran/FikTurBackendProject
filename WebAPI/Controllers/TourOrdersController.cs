@@ -88,6 +88,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getAllTourOrderDetails")]
+        public IActionResult GetAllTourOrderDetails()
+        {
+
+            var result = _tourService.GetAllTourOrderDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
     }
 }

@@ -39,9 +39,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Plan>>(_plandal.GetList().ToList());
         }
 
-        public IDataResult<List<Plan>> GetAllByTourOrderId(int id)
+        public DataResult<List<PlanAndTourOrderDetailsDto>> GetAllPlanAndTourOrderDetails()
         {
-            return new SuccessDataResult<List<Plan>>(_plandal.GetList(p=>p.TourOrderId== id).ToList()) ;
+            return new SuccessDataResult<List<PlanAndTourOrderDetailsDto>>(_plandal.GetAllPlanAndTourOrderDetails());
         }
 
         public DataResult<List<PlanAndTourOrderDetailsDto>> GetAllPlanAndTourOrderDetailsByTourId(int tourId)

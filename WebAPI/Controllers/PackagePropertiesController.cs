@@ -75,9 +75,20 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getOnePackagePropertyDetailsById")]
-        public IActionResult GetAllPackagePropertyDetailsById(int id)
+        public IActionResult GetOnePackagePropertyDetailsById(int id)
         {
             var result = _propertyService.GetOnePackagePropertyDetailsById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getAllPackagePropertyDetails")]
+        public IActionResult GetAllPackagePropertyDetails()
+        {
+            var result = _propertyService.GetAllPackagePropertyDetails();
             if (result.Success)
             {
                 return Ok(result);

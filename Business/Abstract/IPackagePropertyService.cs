@@ -16,5 +16,6 @@ namespace Business.Abstract
         IResult Update(PackageProperty packageProperty);
         IDataResult<PackageProperty> GetById(int packagePropertyId);
         DataResult<PackagePropertyDetailsDto> GetOnePackagePropertyDetailsById(int id);
+        DataResult<List<PackagePropertyDetailsDto>> GetAllPackagePropertyDetails();
     }
 }

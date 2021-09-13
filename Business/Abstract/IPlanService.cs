@@ -14,8 +14,8 @@ namespace Business.Abstract
         IResult Delete(Plan plan);
         IResult Update(Plan plan);
         IDataResult<Plan> GetById(int id);
-        IDataResult<List<Plan>> GetAllByTourOrderId(int id);
         DataResult<List<PlanAndTourOrderDetailsDto>> GetAllPlanAndTourOrderDetailsByTourId(int tourId);
-    
+        DataResult<List<PlanAndTourOrderDetailsDto>> GetAllPlanAndTourOrderDetails();
+
     }
 }

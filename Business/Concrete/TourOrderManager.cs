@@ -51,5 +51,10 @@ namespace Business.Concrete
             this._tourOrderDal.Update(tourOrder);
             return new SuccessResult(Messages.Success);
         }
+
+        public DataResult<List<TourOrderDetailsDto>> GetAllTourOrderDetails()
+        {
+            return new SuccessDataResult<List<TourOrderDetailsDto>>(_tourOrderDal.GetAllTourOrderDetails());
+        }
     }
 }

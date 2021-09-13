@@ -12,5 +12,7 @@ namespace DataAccess.Abstract
     {
        List<PlanAndTourOrderDetailsDto> GetAllPlanAndTourOrderDetailsByTourId(int tourId);
 
+       List<PlanAndTourOrderDetailsDto> GetAllPlanAndTourOrderDetails();
+
     }
 }

@@ -10,5 +10,8 @@ namespace DataAccess.Abstract
     public interface ITourOrderDal:IEntityRepository<TourOrder>
     {
         TourOrderDetailsDto GetOneTourOrderDetailsById(int id);
+
+        List<TourOrderDetailsDto> GetAllTourOrderDetails();
+
     }
 }

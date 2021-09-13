@@ -67,17 +67,7 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpGet("getByTourOrderId")]
-        public IActionResult GetAllByTourOrder(int id)
-        {
-            //Dependency chain -- bağımlılık zinciri
-            var result = _planService.GetAllByTourOrderId(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
+  
         [HttpGet(" getById")]
         public IActionResult GetById(int id)
         {
@@ -94,6 +84,18 @@ namespace WebAPI.Controllers
         public IActionResult GetAllPlanAndTourOrderDetailsByTourId(int tourId)
         {
             var result = _planService.GetAllPlanAndTourOrderDetailsByTourId(tourId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+
+        [HttpGet(" getAllPlanAndTourOrderDetails")]
+        public IActionResult GetAllPlanAndTourOrderDetails()
+        {
+            var result = _planService.GetAllPlanAndTourOrderDetails();
             if (result.Success)
             {
                 return Ok(result);

@@ -10,5 +10,9 @@ namespace DataAccess.Abstract
     public interface IPackagePropertyDal : IEntityRepository<PackageProperty>
     {
         PackagePropertyDetailsDto GetOnePackagePropertyDetailsById(int id);
+
+        List<PackagePropertyDetailsDto> GetAllPackagePropertyDetails();
+
+
     }
 }
