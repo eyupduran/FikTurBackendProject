@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -20,7 +21,7 @@ namespace Business.Concrete
             _plandal = plandal;
         }
 
-
+        [SecuredOperation("admin")]
         public IResult Add(Plan plan)
         {
             this._plandal.Add(plan);
@@ -52,6 +53,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Plan>(_plandal.Get(p=>p.Id==id)) ;
         }
+
 
         public IResult Update(Plan plan)
         {

@@ -16,5 +16,6 @@ namespace Business.Abstract
         IDataResult<Plan> GetById(int id);
         IDataResult<List<Plan>> GetAllByTourOrderId(int id);
         DataResult<List<PlanAndTourOrderDetailsDto>> GetAllPlanAndTourOrderDetailsByTourId(int tourId);
+    
     }
 }

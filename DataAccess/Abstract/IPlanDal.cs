@@ -11,5 +11,6 @@ namespace DataAccess.Abstract
     public interface IPlanDal : IEntityRepository<Plan>
     {
        List<PlanAndTourOrderDetailsDto> GetAllPlanAndTourOrderDetailsByTourId(int tourId);
+
     }
 }

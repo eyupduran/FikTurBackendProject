@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfTourOrderDal : EfEntityRepositoryBase<TourOrder, FikTurContext>, ITourOrderDal
     {
-        public List<TourOrderDetailsDto> GetAllTourOrderDetailsById(int id)
+        public TourOrderDetailsDto GetOneTourOrderDetailsById(int id)
         {
             using (FikTurContext context=new FikTurContext())
             {
@@ -33,7 +33,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  ToCityName = tc.Name
 
                              };
-                return result.ToList();
+                return result.SingleOrDefault();
 
             }
         }

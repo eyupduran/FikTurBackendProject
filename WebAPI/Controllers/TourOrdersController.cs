@@ -20,9 +20,9 @@ namespace WebAPI.Controllers
             _tourService = tourService;
         }
         [HttpGet("getall")]
+       
         public IActionResult GetAll()
         {
-            //Dependency chain -- bağımlılık zinciri
             var result = _tourService.GetAll();
             if (result.Success)
             {
@@ -67,7 +67,6 @@ namespace WebAPI.Controllers
         [HttpGet("getById")]
         public IActionResult GetById(int id)
         {
-            //Dependency chain -- bağımlılık zinciri
             var result = _tourService.GetById(id);
             if (result.Success)
             {
@@ -77,11 +76,11 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpGet("getAllTourOrderDetailsById")]
-        public IActionResult GetAllTourOrderDetailsById(int id)
+        [HttpGet("getOneTourOrderDetailsById")]
+        public IActionResult GetOneTourOrderDetailsById(int id)
         {
             
-            var result = _tourService.GetAllTourOrderDetailsById(id);
+            var result = _tourService.GetOneTourOrderDetailsById(id);
             if (result.Success)
             {
                 return Ok(result);

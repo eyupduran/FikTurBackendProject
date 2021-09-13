@@ -9,6 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface ITourOrderDal:IEntityRepository<TourOrder>
     {
-        List<TourOrderDetailsDto> GetAllTourOrderDetailsById(int id);
+        TourOrderDetailsDto GetOneTourOrderDetailsById(int id);
     }
 }
