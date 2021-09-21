@@ -13,6 +13,8 @@ namespace DataAccess.Abstract
 
         List<PackagePropertyDetailsDto> GetAllPackagePropertyDetails();
 
+        List<PackagePropertyDetailsDto> GetAllPackagePropertyDetailsByPackageId(int id);
+
 
     }
 }

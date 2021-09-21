@@ -42,6 +42,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<PackagePropertyDetailsDto>>(_packagePropertyDal.GetAllPackagePropertyDetails());
         }
 
+        public DataResult<List<PackagePropertyDetailsDto>> GetAllPackagePropertyDetailsByPackageId(int id)
+        {
+            return new SuccessDataResult<List<PackagePropertyDetailsDto>>(_packagePropertyDal.GetAllPackagePropertyDetailsByPackageId(id));
+        }
+
         public IDataResult<PackageProperty> GetById(int packagePropertyId)
         {
             return new SuccessDataResult<PackageProperty>(_packagePropertyDal.Get(p => p.Id == packagePropertyId));

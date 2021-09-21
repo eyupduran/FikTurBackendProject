@@ -95,5 +95,17 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+
+        [HttpGet(" getAllPackagePropertyDetailsByPackageId")]
+        public IActionResult GetAllPackagePropertyDetailsByPackageId(int id)
+        {
+            var result = _propertyService.GetAllPackagePropertyDetailsByPackageId(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

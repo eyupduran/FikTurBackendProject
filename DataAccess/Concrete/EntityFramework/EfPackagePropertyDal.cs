@@ -30,6 +30,24 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
+        public List<PackagePropertyDetailsDto> GetAllPackagePropertyDetailsByPackageId(int id)
+        {
+            using (FikTurContext context = new FikTurContext())
+            {
+                var result = from pp in context.PackageProperties
+                             join p in context.Packages on pp.PackageId equals p.Id
+                             where id == p.Id
+                             select new PackagePropertyDetailsDto
+                             {
+                                 Id = pp.Id,
+                                 Description = pp.Description,
+                                 PackageId = pp.PackageId,
+                                 DetailOfPackage = p.Detail,
+                                 PriceOfPackage = p.Price
+                             };
+                return result.ToList();
+            }
+        }
         public PackagePropertyDetailsDto GetOnePackagePropertyDetailsById(int id)
         {
             using (FikTurContext context=new FikTurContext())
