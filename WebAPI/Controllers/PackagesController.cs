@@ -85,7 +85,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-
+        [HttpGet("getAllPackagePropertyDetails")]
+        public IActionResult GetAllPackagePropertyDetails()
+        {
+            var result = _packageService.GetAllPackagePropertyDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
     }
 }

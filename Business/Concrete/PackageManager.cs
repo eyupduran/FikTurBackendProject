@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,11 @@ namespace Business.Concrete
         public IDataResult<List<Package>> GetAll()
         {
             return new SuccessDataResult<List<Package>>(_packageDal.GetList().ToList());
+        }
+
+        public IDataResult<List<PackageWithProperiesDto>> GetAllPackagePropertyDetails()
+        {
+            return new SuccessDataResult<List<PackageWithProperiesDto>>(_packageDal.GetAllPackagePropertyDetails());
         }
 
         public IDataResult<Package> GetById(int packageId)

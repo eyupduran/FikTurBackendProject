@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,5 +16,7 @@ namespace Business.Abstract
         IDataResult<Package> GetById(int packageId);
 
         IDataResult<List<Package>> getByPrice(decimal min, decimal max);
+
+        IDataResult<List<PackageWithProperiesDto>> GetAllPackagePropertyDetails();
     }
 }
