@@ -14,6 +14,7 @@ namespace Business.Abstract
         IResult Delete(TourOrder tourOrder);
         IResult Update(TourOrder tourOrder);
         IDataResult<TourOrder> GetById(int id);
+        IDataResult<List<TourOrder>> GetByUserId(int userId);
         DataResult<TourOrderDetailsDto>GetOneTourOrderDetailsById(int tourOrderId);
         DataResult<List<TourOrderDetailsDto>> GetAllTourOrderDetails();
 

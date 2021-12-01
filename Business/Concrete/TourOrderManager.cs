@@ -37,7 +37,7 @@ namespace Business.Concrete
         }
         public IDataResult<List<TourOrder>> GetByUserId(int userId)
         {
-            return new SuccessDataResult<List<TourOrder>>(_tourOrderDal.GetList(item=>userId==item.UserId).ToList());
+            return new SuccessDataResult<List<TourOrder>>(_tourOrderDal.GetList(item=>item.UserId== userId).ToList());
         }
         public DataResult<TourOrderDetailsDto> GetOneTourOrderDetailsById(int tourOrderId)
         {
@@ -59,5 +59,6 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<TourOrderDetailsDto>>(_tourOrderDal.GetAllTourOrderDetails());
         }
+
     }
 }

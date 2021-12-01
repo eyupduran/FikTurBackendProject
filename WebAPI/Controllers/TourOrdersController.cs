@@ -74,7 +74,17 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-
+        [HttpGet("getByUserId")]
+        public IActionResult GetByUserId(int userId)
+        {
+            var result = _tourService.GetByUserId(userId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        
 
         [HttpGet("getOneTourOrderDetailsById")]
         public IActionResult GetOneTourOrderDetailsById(int id)
