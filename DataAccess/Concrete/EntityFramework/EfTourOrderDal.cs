@@ -30,10 +30,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  Name = to.Name,
                                  FromCityName = fc.Name,
                                  ToCityName = tc.Name
-
                              };
                 return result.ToList();
-
             }
         }
 

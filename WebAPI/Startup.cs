@@ -35,10 +35,10 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            /* services.AddSwaggerGen((options) =>
-             {
-                 options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo {Title = "My API", Version = "v1" });
-             });*/
+            services.AddSwaggerGen((options) =>
+            {
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "My API", Version = "v1" });
+            });
             services.AddSwaggerGen();
             services.AddCors(options =>
             {
@@ -76,11 +76,11 @@ namespace WebAPI
 
         {
 
-            /* app.UseSwagger();
-             app.UseSwaggerUI(c =>
-             {
-                 c.SwaggerEndpoint("/swagger/v1/swagger.json","My API V1");
-             });*/
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 

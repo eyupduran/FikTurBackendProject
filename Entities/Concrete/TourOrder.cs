@@ -14,7 +14,7 @@ namespace Entities.Concrete
         public DateTime FinishDate { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
- 
-
+        public int UserId { get; set; }
+        public int PacketId { get; set; }
     }
 }
