@@ -13,5 +13,7 @@ namespace DataAccess.Abstract
 
         List<TourOrderDetailsDto> GetAllTourOrderDetails();
 
+        List<AllTourOrderAndAnswerDto> AllTourOrderAndAnswerByUserId(int userId);
+
     }
 }

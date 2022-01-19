@@ -60,5 +60,36 @@ namespace DataAccess.Concrete.EntityFramework
 
             }
         }
+
+        public List<AllTourOrderAndAnswerDto> AllTourOrderAndAnswerByUserId(int userId)
+        {
+            using (FikTurContext context = new FikTurContext())
+            {
+                var result = from to in context.TourOrders
+                             join fc in context.FromCities on to.FromCityId equals fc.Id
+                             join tc in context.ToCities on to.ToCityId equals tc.Id
+                             join pl in context.Plans on to.Id equals pl.TourOrderId
+                             where userId==to.UserId
+                             select new AllTourOrderAndAnswerDto
+                             {
+                                 TourOrderId = to.Id,
+                                 FromCityId = to.FromCityId,
+                                 ToCityId = to.ToCityId,
+                                 StartDate = to.StartDate,
+                                 FinishDate = to.FinishDate,
+                                 DescriptionOfPlan = pl.Description,
+                                 DescriptionOfTourOrder = to.Description,
+                                 FromCityName = fc.Name,
+                                 ToCityName = tc.Name,
+                                 NameOfTourOrder=to.Name,
+                                 PlanId=pl.Id,
+                                 PlanName=pl.Name
+                             };
+                return result.ToList();
+
+            }
+        }
+
+
     }
 }

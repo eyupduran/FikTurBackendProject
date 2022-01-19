@@ -44,6 +44,11 @@ namespace Business.Concrete
             return new SuccessDataResult<TourOrderDetailsDto>(_tourOrderDal.GetOneTourOrderDetailsById(tourOrderId));
         }
 
+        public DataResult<List<AllTourOrderAndAnswerDto>> GetAllTourOrderAndAnswerByUserId(int userId)
+        {
+            return new SuccessDataResult<List<AllTourOrderAndAnswerDto>>(_tourOrderDal.AllTourOrderAndAnswerByUserId(userId));
+        }
+
         public IDataResult<TourOrder> GetById(int id)
         {
             return new SuccessDataResult<TourOrder>(_tourOrderDal.Get(to=>to.Id==id));

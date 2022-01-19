@@ -17,6 +17,7 @@ namespace Business.Abstract
         IDataResult<List<TourOrder>> GetByUserId(int userId);
         DataResult<TourOrderDetailsDto>GetOneTourOrderDetailsById(int tourOrderId);
         DataResult<List<TourOrderDetailsDto>> GetAllTourOrderDetails();
+        DataResult<List<AllTourOrderAndAnswerDto>> GetAllTourOrderAndAnswerByUserId(int userId);
 
     }
 }
