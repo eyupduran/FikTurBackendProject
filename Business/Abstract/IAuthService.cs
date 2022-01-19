@@ -18,3 +18,4 @@ namespace Business.Abstract
         List<OperationClaim> GetUserOperationClaims(User user);
     }
 }
+//Auth
